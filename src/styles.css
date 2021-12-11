@@ -1,1 +1,198 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	
+}
+
+#abc_a{
+	position: relative;
+}
+#abc_b{
+	position: relative;
+}
+#abc_c{
+	position: relative;
+}
+#arpon{
+	position: absolute;
+	font-family: Calibri; 
+	font-size: 28px;
+	color: #003333;
+	text-align: center;
+	top: 35%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 50%;
+	text-decoration:none;
+}
+
+#aronyoneer{
+	position: absolute;
+	font-family: Calibri; 
+	font-size: 28px;
+	color: #003333;
+	text-align: center;
+	top: 35%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 50%;
+	text-decoration:none;
+}
+.about_us{
+	position: absolute;
+	font-family: Calibri; 
+	color: white;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 90%;
+	text-decoration:none;
+}
+.abtus{
+	font-family: Calibri; 
+	font-size: 35px;
+	color: white;
+	text-align: center;
+	text-decoration: underline;
+}
+.abtus1{
+	font-family: Calibri; 
+	font-size: 22px;
+	color: white;
+	text-align: center;
+}
+.abtus2{
+	font-family: Calibri; 
+	font-size: 17px;
+	color: #c0bebe;
+	text-align: center;
+}
+#clnttalk{
+	font-family: Calibri; 
+	font-size: 30px;
+	color: gray;
+	text-align: center;
+	text-decoration: underline;
+}
+.loc{
+	font-family: Calibri; 
+	font-size: 15px;
+	color: #000066;
+	text-align: right;
+}
+.on{
+	font-family: Calibri; 
+	font-size: 20px;
+	color: #006600;
+	text-align: right;
+}
+#arw{
+	font-family: calibri;
+	font-size: 22px;
+	text-align: center;
+	color:gray;
+}
+#arp{
+	font-size: 24px;
+	text-align:center;
+	color:505050;
+}
+#arw1{
+	font-family: calibri;
+	font-size: 18px;
+	text-align: center;
+	color:gray;
+}
+.pro{
+	font-family: calibri;
+	font-size: 18px;
+	text-align: center;
+	text-decoration: underline;
+}
+#arnw{
+	font-family: calibri;
+	font-size: 22px;
+	text-align: center;
+	color:#666666;
+}
+#arnw1{
+	font-family: calibri;
+	font-size: 20px;
+	text-align: center;
+	color:#003300;
+}
+#tc{
+	font-family: calibri;
+	font-size: 12px;
+	text-align: right;
+	
+}
+#prc{
+	font-family: calibri;
+	font-size: 20px;
+	text-align: center;
+	
+}
+.about_arn{
+	position: absolute;
+	font-family: Calibri; 
+	font-size:17px;
+	color: black;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 40%;
+	text-decoration:none;
+	background:rgba(255, 255, 255, 0.2);
+}
+#bcd_a{
+	position: relative;
+}
+#bcd_b{
+	position: relative;
+}
+#bcd_c{
+	position: relative;
+}
+#bcd_d{
+	position: relative;
+}
+#brochure{
+	position: absolute;
+	font-family: Calibri; 
+	font-size: 20px;
+	color: #003333;
+	text-align: center;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 50%;
+	text-decoration:none;
+}
+#contact{
+	position: absolute;
+	font-family: Calibri; 
+	font-size: 20px;
+	color: #003333;
+	text-align: center;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 50%;
+	text-decoration:none;
+}
+#progress{
+	position: absolute;
+	font-family: Calibri; 
+	font-size: 20px;
+	color: #003333;
+	text-align: center;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 50%;
+	text-decoration:none;
+}
