@@ -1,0 +1,56 @@
+<div class="con-body">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-md-3 col-lg-4"></div>
+            <div class="col-sm-4 col-md-6 col-lg-4  m-4">
+                <mat-card class="example-card my-3" style="background:#f0f8ffb8;">
+                    <mat-card-header class="d-none">
+                      <!-- <div><span style="font:20px;font-weight:500">Login</span></div> -->
+                      <mat-card-title>Login</mat-card-title>                                   
+                    </mat-card-header>
+                    <div class="w-100 my-2 text-center">
+                        <span style="font-size: 20px;font-weight:500;" class="d-block mb-3">Login</span>
+                    </div>
+                    <hr>
+                    <mat-card-content>
+                        <p style="text-align: center;padding:15px;">
+                            This login is only for admin and official purpose.
+                          </p>
+                        <mat-form-field class="example-form-field">
+                            <mat-label>Enter username</mat-label>
+                            <input matInput type="text" [(ngModel)]="phone">
+                            <button mat-button *ngIf="phone" matSuffix mat-icon-button aria-label="Clear" (click)="phone=''">
+                              <mat-icon>close</mat-icon>
+                            </button>
+                            <mat-hint align="end">{{phone.length}} / 50</mat-hint>
+                          </mat-form-field>
+                          <mat-form-field class="example-form-field">
+                            <mat-label>Enter password</mat-label>
+                            <input matInput type="password" [(ngModel)]="password">
+                            <button mat-button *ngIf="password" matSuffix mat-icon-button aria-label="Clear" (click)="password=''">
+                              <mat-icon>close</mat-icon>
+                            </button>
+                          </mat-form-field>
+                          
+                          <p *ngIf='invalidLogin' style="text-align: center;color:coral;">{{errorMessage}}</p>
+                      
+                    </mat-card-content>
+                    <mat-card-actions class="text-center mb-3">
+                      <button mat-stroked-button (click)="onSubmit()">
+
+                        {{isRequestInProcess?'Login ...': 'Login'}}
+                                    <span *ngIf="isRequestInProcess" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                      </button>
+                        
+                    </mat-card-actions>
+                  </mat-card>
+                  
+            </div>
+            <div class="col-sm-4 col-md-3 col-lg-4"></div>
+            
+            
+        </div>
+    </div>
+</div>
+
+

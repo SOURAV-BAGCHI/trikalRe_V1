@@ -1,0 +1,202 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
+@import "~assets/style/ihover.min.css";
+/* @import '~slider-carousel/slider-carousel.scss';
+@include slider-carousel(); */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/******************************** navbar height ******************************/
+.navbar {
+    min-height: 80px;
+  }
+
+/*****************************************************************************/ 
+
+/******************************** navbar item ********************************/
+
+.nav-item-margin{
+    margin-right: 5vw;
+    margin-left: 5vw;
+}
+
+/*****************************************************************************/
+
+/******************************* bottom gradient *****************************/
+.border-gradient {
+  border-bottom: 10px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+}
+.border-gradient_lite {
+  border-bottom: 10px solid;
+  border-image-slice: 1;
+  border-width: 2px;
+}
+.border-gradient-green {
+  border-image-source: linear-gradient(to right,#35a81d,#1cb5e0); 
+                      /*linear-gradient(to left, #743ad5, #d53a9d);*/
+}
+.border-gradient-purple {
+  border-image-source: linear-gradient(to right,#421da8,#1cb5e0); 
+                      /*linear-gradient(to left, #743ad5, #d53a9d);*/
+}
+.border-gradient-lightgreen {
+  border-image-source: linear-gradient(to right,#35a81d,#96df87); 
+                      /*linear-gradient(to left, #743ad5, #d53a9d);*/
+}
+.border-gradient-majesticblue {
+  border-image-source: linear-gradient(to right,#74d6db,#28579f); 
+                      /*linear-gradient(to left, #743ad5, #d53a9d);*/
+}
+.border-gradient-white{
+  border-image-source: linear-gradient(to right,#edf8f9,#bdc1c8); 
+  
+}
+
+/*****************************************************************************/
+/**************************** nav brand css **********************************/
+
+.nav-header1{
+  display: block;
+  margin-bottom: -25px;
+  color: green;
+  font-size: 2rem;
+}
+
+.nav-header2{
+    font-size: 2rem;
+    color: green;
+    margin-right: 0px;
+    padding: 13px;
+}
+
+/*****************************************************************************/
+
+/************************* background image css ******************************/
+.bg-image {
+  /* The image used */
+  background-image: url("https://media.cntraveller.in/wp-content/uploads/2020/05/Bengal-tagore-1366x768.jpg");
+  opacity:0.5;
+  /* Add the blur effect */
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  
+  /* Full height */
+  /* height: 100%;  */
+  
+  /* Center and scale the image nicely */
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+/*****************************************************************************/
+
+/***************************date selected style change ***********************/
+  .date-header{
+    display: block;
+    font-size: 0.8rem;
+    position: absolute;
+    top: -10px;
+    left: 5px;
+  }
+
+  .date-value{
+    position: relative;
+    top: 10px;
+    right: 14px;
+    color:darkgreen;
+  }
+
+/*****************************************************************************/
+
+/***************************** div position relative *************************/
+.cont {
+  position: relative;
+}
+/*****************************************************************************/
+
+.bg-img-aminities{
+  background: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+}
+
+.verification_img{
+  /* max-width:calc(100vw - 80px); */
+  width:80%;
+  margin:auto;
+  height: auto;
+  position: relative;
+  top:-1vh;
+
+}
+
+/*************************** min height of a body *********************************/
+  .min-ht{
+    min-height: 80vh;
+  }
+
+/**********************************************************************************/
+
+/**************************** for texts with gradients ****************************/
+.gradient_text_2
+{
+
+    font-size: 30px;
+    font-weight: bold;
+    background: -webkit-linear-gradient(#14440a,#7cccb2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+.gradient_text_3
+{
+
+    font-size: 25px !important;
+    font-weight: bold;
+    background: -webkit-linear-gradient(#0a3a5d,#20f388);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+/**********************************************************************************/
+
+/******************* for smooth scroll when page chane from footer*****************/
+html {
+  scroll-behavior: smooth;
+}
+/**********************************************************************************/
+
+/***************************  check in check out card *****************************/
+.m-card{
+  border-left: 6px solid orangered;
+  padding:10px !important;
+
+}
+
+.m-card .mat-card-title{
+  margin-top:-18px !important;
+  font-size: 18px !important;
+}
+
+.m-card .check-availability-card
+{
+  margin-top:18px !important;
+  font-size: 20px !important;
+}
+
+.font-icon{
+  font-size: 18px;
+}
+
+.cursor-pointer
+{
+  cursor: pointer;
+}
+
+/**********************************************************************************/

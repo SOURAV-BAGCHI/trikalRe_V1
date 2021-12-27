@@ -1,0 +1,14 @@
+.con-body{
+    background: lightblue url("https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+    /* background-repeat: no-repeat; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.example-form-field{
+    width: 100%;
+    margin-bottom: 8px;
+    margin-top:8px;
+}

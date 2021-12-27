@@ -1,0 +1,162 @@
+<div class="container" style="min-height: 80vh;">
+    <div class="row">
+        <div class="col-sm-12">
+            <mat-card class="example-card  my-4">
+                <div *ngIf="isLoadingData">
+                    <div class="d-flex align-items-center">
+                        <strong>Loading Booking summary...</strong>
+                        <div class="spinner-border text-success ml-auto" role="status" aria-hidden="true"></div>
+                      </div>
+                </div>
+                <div *ngIf="bookingSummery" id="contentToConvert" class="p-3">
+                    <div class="row">
+                        <div class="col-12">
+                            <img src="assets/img/janani_small_logo.png" alt="" style="width:5rem;">
+                        </div>
+                        <div class="col-9">
+                            <h2 class="booking-summery-heading">Booking Summary</h2>
+                        </div>
+                        <div class="col-3 text-right d-none">
+                            <span class="btn" (click)="generatePDF()"><i class="fas fa-print fa-2x"></i></span>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="row">
+                        <div class="col-sm-12 mt-4">
+                            <p class="text-right status-heading"> {{statusMap.get(bookingSummery.status)}}</p>
+                            <p class="text-right bookingid">Booking ID #{{bookingSummery.bookingId}}</p>
+                            <div class="card my-4">
+                                <div class="card-body">
+                                 <div class="row">
+                                     <div class="col-sm-6">
+                                        <p class="bookingid"> Booking Period</p>
+                                        <p>{{bookingSummery.bookingStartDate | date:'medium'}} - {{bookingSummery.bookingEndDate | date:'medium'}}</p>
+                                     </div>
+                                     <div class="col-sm-6">
+                                         <p> <span class="bookingid"> Booked on:</span> {{bookingSummery.createDate | date:'medium'}}</p>
+                                         <p> <span class="bookingid"> Name:</span> {{bookingSummery.name}}</p>
+                                         <p> <span class="bookingid">Phone:</span> {{bookingSummery.phone}}</p>
+                                         <p> <span class="bookingid">Email:</span> {{bookingSummery.email}}</p>
+                                    </div>
+                                 </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="my-3">
+                                <div class="row ml-2 mb-3 mt-4">
+                                    <h3 class="heading">Invoice</h3>
+                                </div>
+                                <div class="row">
+                                    <!-- /***********************************************************************/ -->
+                                    
+                                    
+                                        <table id="customers">
+                                            <tr>
+                                              <th>S.No.</th>
+                                              <th>Room</th>
+                                              <th>Nights</th>
+                                              <th>No. of person</th>
+                                              <th>Currency</th>
+                                              <th>Amount</th>
+                                            </tr>
+                                            <tr *ngFor="let roomDetails of bookingSummery.roomOrderDetails;index as i" class="text-center" >
+                                                <td>{{i+1}}</td>
+                                                <td>{{roomDetails.name}}</td>
+                                                <td>{{bookingSummery.numberOfDays}}</td>
+                                                <td>{{roomDetails.numberOfPerson}}</td>
+                                                <td>INR</td>
+                                                <td>{{(roomDetails.ratePerDay + roomDetails.acCharges)*bookingSummery.numberOfDays}}</td>
+                                            </tr>
+                                           
+                                            <tr>
+                                                <td colspan="4" class="txt-align-right">
+                                                    Room Rent
+                                                </td>
+                                                <td>INR</td>
+                                                <td>{{roomRent}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4" class="txt-align-right">
+                                                    Total
+                                                </td>
+                                                <td>INR</td>
+                                                <td>{{total}}</td>
+                                            </tr>
+                                            <!-- <tr>
+                                                <td colspan="4" class="txt-align-right">
+                                                    Discount Amount
+                                                </td>
+                                                <td>INR</td>
+                                                <td>{{discountAmount}}</td>
+                                            </tr> -->
+                                            <tr>
+                                                <td colspan="4" class="txt-align-right">
+                                                    Sub Total
+                                                </td>
+                                                <td>INR</td>
+                                                <td>{{subTotal}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4" class="txt-align-right">
+                                                    Total Taxes
+                                                </td>
+                                                <td>INR</td>
+                                                <td>{{totalTaxes}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4" class="txt-align-right">
+                                                    Amount Paid
+                                                    </td>
+                                                    <td>INR</td>
+                                                    <td>{{paidAmount}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4" class="txt-align-right">
+                                                    Total Outstanding Amount
+                                                </td>
+                                                <td>INR</td>
+                                                <td>{{outstandingAmount}}</td>
+                                            </tr>  
+                                          </table>
+                                    
+                                    
+                                    <hr>
+
+                                    <!-- /***************************************************************************/ -->
+                                </div>
+                               
+                                
+                            </div>
+                            <div class="mb-3 mt-4">
+                                <h3 class="heading">Activity Summary</h3>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <table class="table">
+                                            <thead class="thead-light">
+                                                <tr>
+                                                    <td scope="col" class="tableheader">Activity</td>
+                                                    <td scope="col" class="tableheader">Time</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let activity of bookingSummery.statusList;index as j">
+                                                    <td scope="row">{{statusMap.get(activity.status)}}</td>
+                                                    <td scope="row">{{activity.statusDate}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="!isLoadingData && !bookingSummery">
+                    <h2 class="text-danger">No data found.Try again later</h2>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

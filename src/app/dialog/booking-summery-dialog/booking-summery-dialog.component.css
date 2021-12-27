@@ -1,0 +1,26 @@
+.status-heading{
+    font-size: 1.4rem;
+font-weight: bold;
+color: goldenrod;
+}
+
+.booking-summery-heading{
+    font-weight: bold;
+font-size: 1.5rem;
+color: chocolate;
+}
+
+.bookingid{
+    color: darkgray;
+font-weight: bold;
+}
+
+.heading{
+    font-size: 1.3rem;
+font-weight: bold;
+color: darkgray;
+}
+
+.tableheader{
+    font-weight: bold;
+}

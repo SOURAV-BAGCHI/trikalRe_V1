@@ -1,0 +1,16 @@
+footer{
+    font-family: 'Quicksand', sans-serif;
+    text-rendering: geometricPrecision;
+}
+
+footer h3{
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+ul.links {
+    padding: 0;
+    border-top: 1px solid #fff;
+    width: 75%;
+}

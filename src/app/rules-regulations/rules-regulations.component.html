@@ -1,0 +1,21 @@
+<div class="d-flex justify-content-center">
+    <div class="spinner-border text-success" role="status"  *ngIf="isloading">
+      <span class="visually-hidden"></span>
+    </div>
+  </div>
+  <div class="text-center my-3" *ngIf="errorloading">
+    <span class="text-danger" style="font-size: large;">Error loading rules and regulations. Try again...</span>
+  </div>
+  <pdf-viewer [src]="pdfSrc" 
+              [render-text]="true"
+              [original-size]="false"
+              [autoresize]="true"
+              style="display: block;"
+              (on-progress)="onProgress($event)"
+              (page-rendered)="pageRendered($event)"
+              (error)="onError($event)"
+  ></pdf-viewer>
+<!-- </mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Close</button>
+</mat-dialog-actions> -->

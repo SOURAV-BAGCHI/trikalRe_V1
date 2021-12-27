@@ -1,0 +1,30 @@
+<div class="row my-5 mx-2">
+    <ng-container *ngIf="mode=='horizontal'">
+        <div class="col-sm-3 mb-2" *ngFor="let item of mediaList">
+            <div class="card w-100">
+              <a href="{{item.mediaMain}}" target="_blank"><img src="{{item.mediaSub}}" class="card-img-top" alt="..."></a>
+              <div class="card-body">
+                <p class="card-text">{{item.title}}</p>
+                <p class="card-text subtitle">{{item.subtitle}}</p>
+              </div>
+            </div>
+          </div>
+    </ng-container>
+    <ng-container *ngIf="mode=='vertical'">
+        <div class="col-sm-12 mb-2" *ngFor="let item of mediaList">
+            <div class="card w-100">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <a href="{{item.mediaMain}}" target="_blank"><img src="{{item.mediaSub}}" class="card-img-top" alt="..."></a>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="card-body">
+                            <p class="card-text">{{item.title}}</p>
+                            <p class="card-text subtitle">{{item.subtitle}}</p>
+                          </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </ng-container>
+</div>

@@ -1,0 +1,36 @@
+<h2 mat-dialog-title class="text-center">RULES & REGULATIONS</h2>
+<mat-dialog-content class="mat-typography">
+  <!-- <h3>Guests are requested:</h3>
+  <p>1. to deposit the room key at the reception counter every time she / he leaves the Janani Greens premises.</p>
+  <p>2. to keep their cash, valuable items securely in their own bags / lockers. Management & staff of Janani Greens are not liable if they are lost or misplaced.</p>
+  <p>3. to switch off all the electrical switches including light, fan, A.C., Geyser when leaving the room.</p>
+  <p>4. not to wash their clothes in the washroom or waste water. Water is scarce in the district of Birbhum.</p>
+  <p>5. not to use any electric heaters / electrical mixer or their electrical gadgets which consume more energy.</p>
+  <p>6. not to indulge in alcoholic drinks or engage into any obnoxious acts / brawls / loud noise in the Janani Greens premises. </p>
+  <p>7. to keep noiseless & peaceful environment in the RHS premises. It is also requested that guests should keep the Janani Greens premises litter / Trash free.</p>
+  <p>8. to handle and use all electrical fittings, including fans, A.C., television set, geyser, room walls, bed sheets, towels, furniture & fittings, wash room fittings including commode, sink, wash basin, mirror with utmost care keeping in mind that this is like their own home away from home. Please note any damage of the objects shall be recovered as damage charge. </p>
+  <p>9. Food and beverages from Other restaurant other than Village Kitchen cannot be ordered/provided/consumed in Janani Greens premises.</p>
+  <p>10. Janani Green main gate opens by 5:00 am and closes by 11:30 pm. The management reserves the right of admission.</p> -->
+  
+  <div class="d-flex justify-content-center">
+    <div class="spinner-border text-success" role="status"  *ngIf="isloading">
+      <span class="visually-hidden"></span>
+    </div>
+  </div>
+  <div class="text-center my-3" *ngIf="errorloading">
+    <span class="text-danger" style="font-size: large;">Error loading rules and regulations. Try again...</span>
+  </div>
+  <pdf-viewer [src]="pdfSrc" 
+              [render-text]="true"
+              [original-size]="false"
+              [autoresize]="true"
+              style="display: block;"
+              (on-progress)="onProgress($event)"
+              (page-rendered)="pageRendered($event)"
+              (error)="onError($event)"
+  ></pdf-viewer>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <!-- <button mat-button mat-dialog-close>Cancel</button> -->
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Close</button>
+</mat-dialog-actions>

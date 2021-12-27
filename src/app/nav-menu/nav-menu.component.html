@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- <a class="navbar-brand" href="#" *ngIf="ishomepage"><span class="nav-header1">JANANI</span><span class="nav-header2">Greens</span></a> -->
+    <a class="navbar-brand" href="#" routerLink="" [ngClass]="{'invisible':ishomepage,'visible':!ishomepage}" >
+      <!-- <span class="nav-header1">JANANI</span><span class="nav-header2">Greens</span> -->
+      <img src="assets/img/trlogo.PNG" alt="" style="width: 7rem;height:3rem;">
+    </a>
+    <button id="temp" (click)="navactivitydone()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto border-gradient border-gradient-green">
+        <li class="nav-item nav-item-margin" *ngIf='!isloggedin'>
+          <a class="nav-link" href="#" style="font-size:20px;" routerLink="" routerLinkActive="gradient_text_3 active" [routerLinkActiveOptions]="{exact:true}">Home</a>
+        </li>
+        <li class="nav-item nav-item-margin" *ngIf='!isloggedin'>
+          <a class="nav-link" href="#" style="font-size:20px;" routerLink="gallery" routerLinkActive="gradient_text_3 active">Gallery</a>
+        </li>
+       
+        <li class="nav-item nav-item-margin" *ngIf='!isloggedin'>
+          <a class="nav-link" href="#" style="font-size:20px;" routerLink="feedback" routerLinkActive="gradient_text_3 active">Feedback</a>
+        </li>
+        
+
+
+        <li class="nav-item nav-item-margin" *ngIf='isloggedin'>
+          <a class="nav-link" href="#" style="font-size:20px;" routerLink="/admin/current-booking" routerLinkActive="gradient_text_3 active">Current Bookings <span class="sr-only">(current)</span></a>
+        </li>  
+        <li class="nav-item nav-item-margin" *ngIf='isloggedin'>
+          <a class="nav-link" href="#" style="font-size:20px;" routerLink="/admin/manual-booking" routerLinkActive="gradient_text_3 active">Manual Booking</a>
+        </li>
+        <li class="nav-item nav-item-margin" *ngIf='isloggedin'>
+          <a class="nav-link" href="#" style="font-size:20px;" routerLink="/admin/booking-history" routerLinkActive="gradient_text_3 active">Booking History</a>
+        </li>
+
+
+      </ul>
+
+      
+        <a class="nav-link mr-sm-2" *ngIf='!isloggedin' routerLink="/admin/login"><i class="fas fa-sign-in-alt"></i></a>
+        <a class="nav-link" *ngIf='isloggedin' style="cursor: pointer;" (click)="logout()"><i class="fas fa-sign-out-alt"></i></a>
+    </div>
+  </nav>

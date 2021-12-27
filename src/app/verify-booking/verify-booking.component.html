@@ -1,0 +1,43 @@
+<div style="background: green;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <mat-card class="example-card  my-4">
+                    <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+
+                    <mat-card-content class="text-center">
+                        <div class="row">
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-6">
+                                <img src="assets/img/email-verification.jpg" alt="" class="verification_img">
+                                <div *ngIf='isCodeValid!=null'>
+                                    <h1 [ngClass]="{'text-success':isCodeValid,'text-danger':!isCodeValid}">
+                                        {{isCodeValid?'Email verification successful':'Error in verifying your email'}}
+                                    </h1>
+                                    <p>{{message}}</p>
+                                </div>
+                                <div *ngIf="isCodeValid==null">
+                                    <h1>Verify your email address</h1>
+                                <p>Please confirm that you have opted for room booking as mentioned in the email.Click the link below to confirm your email address.</p>
+                                </div>
+                                
+
+                                <button *ngIf="isCodeValid==null" type="button" class="btn btn-outline-success my-4" (click)="VerifyAndConfirm()">
+                                    {{isRequestInProcess?'Verifying ...': 'CLICK TO CONFIRM'}}
+                                    <span *ngIf="isRequestInProcess" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                </button>
+                                
+                                <button *ngIf="isCodeValid!=null" class="btn my-4" [ngClass]="{'btn-outline-success':isCodeValid,'btn-outline-danger':!isCodeValid}" (click)="gotohome()">Go back to home page</button>
+                            </div>
+                            <div class="col-sm-3"></div>
+                        </div>
+                        
+                        
+
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
+
